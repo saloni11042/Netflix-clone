@@ -1,0 +1,45 @@
+/* Row.css */
+.row {
+  margin-left: 20px;
+  color: #fff;
+}
+
+.row-title {
+  font-size: 1.5em;
+  font-weight: bold;
+  padding: 20px 0;
+}
+
+.row-cards {
+  display: flex;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  padding: 20px 0;
+  margin-left: 20px;
+}
+
+.row-cards::-webkit-scrollbar {
+  display: none;
+}
+
+.card-list {
+  display: flex;
+}
+
+.card-list .card {
+  margin-right: 10px;
+  transition: transform 450ms;
+}
+
+.card-list .card:hover {
+  transform: scale(1.08);
+  opacity: 1;
+}
+
+/* Ensure images fit within their container and maintain aspect ratio */
+.card img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  cursor: pointer;
+}

@@ -1,0 +1,82 @@
+/* Navbar.css */
+.navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    z-index: 1000; 
+  }
+  
+  .navbar__left {
+    display: flex;
+    align-items: center;
+  }
+  
+  .navbar__logo {
+    width: 80px;
+    object-fit: contain;
+    cursor: pointer;
+  }
+  
+  .navbar__links {
+    display: flex;
+    margin-left: 20px;
+  }
+  
+  .navbar__links a {
+    color: white;
+    text-decoration: none;
+    margin-right: 20px;
+    font-weight: bold;
+  }
+  
+  .navbar__links a:hover {
+    color: #e50914; /* Netflix red color */
+  }
+  
+  .navbar__right {
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+  
+  .navbar__icon {
+    color: white;
+    margin-right: 20px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  .navbar__avatar {
+    width: 40px;
+    object-fit: contain;
+    cursor: pointer;
+  }
+  
+  .navbar__dropdown {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    background-color: #333;
+    color: white;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .navbar__dropdown a {
+    display: block;
+    padding: 10px 20px;
+    color: white;
+    text-decoration: none;
+  }
+  
+  .navbar__dropdown a:hover {
+    background-color: #444;
+  }
+  

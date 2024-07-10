@@ -1,24 +1,35 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Header from './components/Header';
+import Row from './components/Row';
+import Navbar from './components/Navbar';
 import './App.css';
+import Home from './pages/Home';
+import TVShows from './pages/TVShows';
+import Movies from './pages/Movies';
+import NewPopular from './pages/NewPopular';
+import MyList from './pages/MyList';
 
 function App() {
+  const [addedMovies, setAddedMovies] = useState([]);
+
+  const addMovieToList = (movie) => {
+    setAddedMovies((prevMovies) => [...prevMovies, movie]);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <BrowserRouter>
+        <Navbar />
+        <Routes>
+          <Route path='/' element={<Home addMovieToList={addMovieToList} />} />
+          <Route path='/tvshows' element={<TVShows addMovieToList={addMovieToList} />} />
+          <Route path='/movies' element={<Movies addMovieToList={addMovieToList} />} />
+          <Route path='/newpopular' element={<NewPopular addMovieToList={addMovieToList} />} />
+          <Route path='/mylist' element={<MyList addedMovies={addedMovies} />} />
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 }
 
